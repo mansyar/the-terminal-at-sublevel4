@@ -1,0 +1,1 @@
+Phase D verification (manual, user-confirmed): CRT overlay full-screen after BackBufferCopy copy_mode=VIEWPORT fix; flicker tuned 3.5%->8% (user taste, three iterations); F1 phosphor toggle + F2 flicker toggle verified; typing/clicks/Tab/history/ghost verified; header seed+clock verified; 64/64 tests, lint/format clean, CI green on GitHub Actions.
