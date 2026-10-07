@@ -54,7 +54,8 @@
   - Tab completion (verbs + known args), ↑/↓ history, inline ghost-text from history — all diegetic
 - [x] Task: Wire shell to core (SHA: a869c4f)
   - Status header (system status, seed, clock), parser results rendered to screen; smoke tests for shell; lint/format clean
-- [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md)
+- [x] Task: Phase Verification & Checkpoint (Refer to workflow.md) `[checkpoint: 3f710ac]`
+  - Verified 2026-10-08: manual CRT/input verification confirmed by user (3 flicker-tune iterations, 8% final); git-notes report on 3f710ac.
 
 ## Phase E: Content Slice & Export Verification
 
