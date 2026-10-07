@@ -42,16 +42,17 @@
 
 ## Phase D: Terminal Shell (presentation — smoke tests, no red phase)
 
-- [~] Task: 80×24 grid terminal surface
+- [x] Task: 80×24 grid terminal surface (SHA: a869c4f)
   - RichTextLabel-based shell honoring the grid contract, deterministic wrapping, bounded scrollback (~200 lines) + per-run file mirror
-    - TerminalBuffer (wrap/scrollback/mirror) committed and tested (SHA: 2f4626f); scene surface rendering lands with the wire-up task
-- [ ] Task: CRT shader & display toggles
-  - Scanlines, vignette, subtle flicker, phosphor persistence; green default + amber toggle + reduced-flicker accessibility toggle
-- [ ] Task: Custom input capture
+    - TerminalBuffer (wrap/scrollback/mirror) 2f4626f; scene surface rendering in a869c4f
+- [x] Task: CRT shader & display toggles (SHA: a869c4f)
+  - Scanlines, vignette, subtle flicker; green default + amber toggle (F1) + reduced-flicker toggle (F2)
+    - Note: phosphor persistence approximated (tint glow); true afterimage deferred to Phase 4 polish
+- [x] Task: Custom input capture (SHA: a869c4f)
   - Per-keystroke key capture driving typing SFX, cursor rendering; no stock LineEdit
-- [ ] Task: Autocomplete & history
+- [x] Task: Autocomplete & history (SHA: b7e12f5)
   - Tab completion (verbs + known args), ↑/↓ history, inline ghost-text from history — all diegetic
-- [ ] Task: Wire shell to core
+- [x] Task: Wire shell to core (SHA: a869c4f)
   - Status header (system status, seed, clock), parser results rendered to screen; smoke tests for shell; lint/format clean
 - [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md)
 
