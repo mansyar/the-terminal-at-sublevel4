@@ -78,6 +78,7 @@ scroll_active = false
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="."]
 layout_mode = 1
+copy_mode = 2
 
 [node name="CRTOverlay" type="ColorRect" parent="."]
 unique_name_in_owner = true
