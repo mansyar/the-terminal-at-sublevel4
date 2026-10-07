@@ -1,0 +1,1 @@
+Phase D verification: 64/64 tests pass; --min 90 gate passes with src/ui excluded per spec (core: 94.7% lines / 93.9% branches); lint clean; gdformat clean; headless boot of main scene clean (--quit-after 10, no script errors). Manual playtest (CRT look, key capture, toggles) deferred to Phase D checkpoint confirmation.
