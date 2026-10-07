@@ -23,6 +23,12 @@
 - **Pre-commit:** `gd-tools install-hooks --hooks format,lint` (add `test` once suite is fast).
 - **Note:** GUT is NOT used (removed support in gd-tools v0.6.0). All suites extend `GdToolsTest`.
 
+## Builds & Exports
+
+- **Dual-editor reality:** the installed Godot is the .NET (mono) build, which refuses Web export even for pure-GDScript projects. Web exports are therefore driven by the standard (non-.NET) 4.7.2 editor at `tools/godot-standard/` (gitignored, downloaded from godot-builds). The mono build handles dev, tests, and Windows exports.
+- **Export templates:** 4.7.2.stable installed in `%APPDATA%\Godot\export_templates\` and junctioned as `4.7.2.stable.mono` so both editor builds resolve them.
+- **Export presets:** `export_presets.cfg` — Windows Desktop (`exports/windows/SubLevel4.exe`) and Web (`exports/web/index.html`, `thread_support=false`); dev trees (`addons/`, `tests/`, `tools/`, `conductor/`) excluded from both.
+
 ## Assets
 
 - **SFX:** freesound.org / Kenney audio (free licenses, attribution tracked in `CREDITS.md`).
