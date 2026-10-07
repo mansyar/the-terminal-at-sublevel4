@@ -7,11 +7,12 @@
   - `.gitignore` (`.godot/`, `.gd-tools/`, run logs, exports)
   - Create GitHub remote and push (user action: create repo)
     - **DEVIATION (2026-10-08):** deferred — GitHub repo-creation API returning 500s (server-side incident). Remote + CI verification retried later in this track; Task stays open until then.
-- [~] Task: Initialize gd-tools toolchain
+- [x] Task: Initialize gd-tools toolchain (SHA: 4037054)
   - Run `gd-tools init`; review generated `gd-tools.toml`, gdlintrc, gdformatrc
   - `gd-tools doctor` passes; `gd-tools install-hooks --hooks format,lint`
-- [ ] Task: CI pipeline (GitHub Actions)
+- [~] Task: CI pipeline (GitHub Actions)
   - Workflow running `gd-tools lint`, `format --check`, `test --coverage` on push; green on first run
+    - Note: `--min 90` coverage gate is added in Phase B once `src/core/` exists (nothing to gate now)
 - [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md)
 
 ## Phase B: WorldState Core (TDD)

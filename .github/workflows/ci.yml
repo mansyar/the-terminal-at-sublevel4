@@ -1,0 +1,39 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install gd-tools
+        run: pip install gd-tools-cli
+
+      - name: Setup Godot
+        uses: chickensoft-games/setup-godot@v1
+        with:
+          version: 4.7.2
+
+      - name: Verify toolchain
+        run: |
+          godot --version
+          gd-tools doctor
+
+      - name: Lint
+        run: gd-tools lint
+
+      - name: Format check
+        run: gd-tools format --check
+
+      - name: Tests with coverage
+        run: gd-tools test --coverage
