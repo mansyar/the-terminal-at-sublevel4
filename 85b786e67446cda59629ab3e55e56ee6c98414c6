@@ -1,0 +1,1 @@
+Phase A checkpoint verification (2026-10-08): gd-tools lint OK; format --check OK; gd-tools test 2/2 passed (smoke suite); headless import (godot --import) clean on 4.7.2. CI verification deferred with GitHub remote (creation API returning 500s at time of work).
