@@ -65,10 +65,11 @@
 - [x] Task: End-to-end integration
   - `query L4-02` returns real state on the CRT screen; full acceptance-criteria walkthrough (spec items 1-4)
   - Verified via rendered-frame capture: query L4-02 (door+sensor), log directives_07 (full lore body), query chen (personnel); clock advanced 01:50→01:56
-- [~] Task: Export presets & verification
+- [x] Task: Export presets & verification
   - Windows + Web export presets; web export builds and runs in browser
-  - Presets committed (74179ff); 4.7.2 export templates downloading for export run
-- [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md)
+  - Presets committed (74179ff). Windows export: SubLevel4.exe + .pck built. Web export: full WASM bundle built and boot-verified in browser (Godot v4.7.2 console clean, WebGL 2.0 context, live canvas, all assets served 200).
+  - DEVIATION: user's Godot is the .NET (mono) build, which refuses Web export; standard (non-.NET) 4.7.2 editor downloaded to tools/godot-standard/ (gitignored) to drive Web exports. Export templates 4.7.2.stable installed + junctioned as 4.7.2.stable.mono.
+- [~] Task: Phase Verification & Checkpoint (Refer to workflow.md)
 
 ---
 

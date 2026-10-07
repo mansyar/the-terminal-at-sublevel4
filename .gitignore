@@ -11,6 +11,7 @@ exports/
 
 # Run session logs (per-run terminal mirrors)
 *.session.log
+tools/godot-standard/
 
 # OS junk
 Thumbs.db
