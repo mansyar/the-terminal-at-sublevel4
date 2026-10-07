@@ -2,11 +2,12 @@
 
 ## Phase A: Project Bootstrap & Toolchain
 
-- [ ] Task: Create Godot 4.5+ project skeleton
+- [~] Task: Create Godot 4.5+ project skeleton
   - `project.godot` with terminal game title; `src/core/`, `src/ui/`, `data/`, `tests/` directories
   - `.gitignore` (`.godot/`, `.gd-tools/`, run logs, exports)
   - Create GitHub remote and push (user action: create repo)
-- [ ] Task: Initialize gd-tools toolchain
+    - **DEVIATION (2026-10-08):** deferred — GitHub repo-creation API returning 500s (server-side incident). Remote + CI verification retried later in this track; Task stays open until then.
+- [~] Task: Initialize gd-tools toolchain
   - Run `gd-tools init`; review generated `gd-tools.toml`, gdlintrc, gdformatrc
   - `gd-tools doctor` passes; `gd-tools install-hooks --hooks format,lint`
 - [ ] Task: CI pipeline (GitHub Actions)

@@ -1,0 +1,10 @@
+- id: gd-tools-format
+  name: gd-tools format --check
+  entry: gd-tools format --check
+  language: system
+  files: \.gd$
+- id: gd-tools-lint
+  name: gd-tools lint
+  entry: gd-tools lint
+  language: system
+  files: \.gd$
