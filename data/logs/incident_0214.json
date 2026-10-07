@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "title": "AUTOMATED INCIDENT REPORT — 02:14",
+  "body": "TRIP CONDITION: BIO-CONTAINMENT PRESSURE DELTA\nLOCATION: SUB-LEVEL 4, CORRIDOR L4-02\n\nAt 02:14:02 the containment seal L4-02 reported a manual\noverride request concurrent with an atmospheric pressure\ndrop of 12.4 kPa in the adjacent corridor.\n\nAutomated bio-scan registered an intermittent signature in\nthe corridor: count fluctuating between 0 and 2.\nBio-scan integrity: UNVERIFIED. Signature classification:\nINCONCLUSIVE.\n\nThis report was generated without operator acknowledgment."
+}

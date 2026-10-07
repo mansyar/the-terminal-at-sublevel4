@@ -1,0 +1,1 @@
+{"schema_version": 1, "sectors": {"L4": {"name": "Sub-Level 4 — Containment Corridor", "doors": {"L4-02": {"state": "open", "integrity": "compromised"}}, "sensors": {"L4-02": {"temp_c": 5.0, "co2_pct": 0.5, "pressure_kpa": 88.0, "bio_count": 3}}}}}

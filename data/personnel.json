@@ -1,0 +1,1 @@
+{"schema_version": 1, "personnel": {"arisova": {"name": "Dr. Elena Arisova", "location": "L4 Lab A", "status": "on-shift", "heart_rate_bpm": 68.0}, "miller": {"name": "Sgt. Dana Miller", "location": "L4 Checkpoint", "status": "on-shift", "heart_rate_bpm": 68.0}, "chen": {"name": "Chief Engineer Chen", "location": "Sub-Level 2", "status": "on-shift", "heart_rate_bpm": 68.0}}}

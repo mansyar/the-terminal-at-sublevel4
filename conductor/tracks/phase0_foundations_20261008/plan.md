@@ -59,7 +59,7 @@
 
 ## Phase E: Content Slice & Export Verification
 
-- [ ] Task: Author Phase 0 content (JSON, schema_versioned)
+- [~] Task: Author Phase 0 content (JSON, schema_versioned)
   - L4 corridor sector (doors, sensors incl. L4-02, env readings); dossiers: Arisova, Miller, Chen; 3-5 lore log entries
 - [ ] Task: End-to-end integration
   - `query L4-02` returns real state on the CRT screen; full acceptance-criteria walkthrough (spec items 1-4)
