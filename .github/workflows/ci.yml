@@ -17,7 +17,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install gd-tools
-        run: pip install gd-tools-cli
+        run: pip install gd-tools-cli==0.7.0
 
       - name: Setup Godot
         uses: chickensoft-games/setup-godot@v1
@@ -36,4 +36,4 @@ jobs:
         run: gd-tools format --check
 
       - name: Tests with coverage
-        run: gd-tools test --coverage
+        run: gd-tools test --coverage --min 90
