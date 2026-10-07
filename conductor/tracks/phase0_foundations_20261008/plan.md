@@ -59,12 +59,15 @@
 
 ## Phase E: Content Slice & Export Verification
 
-- [~] Task: Author Phase 0 content (JSON, schema_versioned)
+- [x] Task: Author Phase 0 content (JSON, schema_versioned) `[c9d4deb]`
   - L4 corridor sector (doors, sensors incl. L4-02, env readings); dossiers: Arisova, Miller, Chen; 3-5 lore log entries
-- [ ] Task: End-to-end integration
+  - NOTE: WorldState refactored data-driven — sectors/personnel load from data/*.json via DataLoader; seeded jitter applied over authored values
+- [x] Task: End-to-end integration
   - `query L4-02` returns real state on the CRT screen; full acceptance-criteria walkthrough (spec items 1-4)
-- [ ] Task: Export presets & verification
+  - Verified via rendered-frame capture: query L4-02 (door+sensor), log directives_07 (full lore body), query chen (personnel); clock advanced 01:50→01:56
+- [~] Task: Export presets & verification
   - Windows + Web export presets; web export builds and runs in browser
+  - Presets committed (74179ff); 4.7.2 export templates downloading for export run
 - [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md)
 
 ---
