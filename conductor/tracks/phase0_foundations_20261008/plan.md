@@ -2,18 +2,18 @@
 
 ## Phase A: Project Bootstrap & Toolchain
 
-- [~] Task: Create Godot 4.5+ project skeleton
+- [x] Task: Create Godot 4.5+ project skeleton (SHA: 36d150e)
   - `project.godot` with terminal game title; `src/core/`, `src/ui/`, `data/`, `tests/` directories
   - `.gitignore` (`.godot/`, `.gd-tools/`, run logs, exports)
   - Create GitHub remote and push (user action: create repo)
-    - **DEVIATION (2026-10-08):** deferred — GitHub repo-creation API returning 500s (server-side incident). Remote + CI verification retried later in this track; Task stays open until then.
+    - **DEVIATION RESOLVED (2026-10-08):** GitHub repo-creation API recovered; remote created and pushed (https://github.com/mansyar/the-terminal-at-sublevel4)
 - [x] Task: Initialize gd-tools toolchain (SHA: 4037054)
   - Run `gd-tools init`; review generated `gd-tools.toml`, gdlintrc, gdformatrc
   - `gd-tools doctor` passes; `gd-tools install-hooks --hooks format,lint`
-- [ ] Task: CI pipeline (GitHub Actions)
-  - Workflow running `gd-tools lint`, `format --check`, `test --coverage` on push; green on first run
-    - Note: `--min 90` coverage gate is added in Phase B once `src/core/` exists (nothing to gate now)
-    - Workflow file committed (SHA: 85b786e); **run verification deferred** until remote exists
+- [x] Task: CI pipeline (GitHub Actions) (SHA: e64d419)
+  - Workflow running `gd-tools lint`, `format --check`, `test --coverage --min 90` on push; green on first run
+    - Workflow file committed 85b786e; verified GREEN on GitHub Actions (run 37696895915, commit e64d419)
+    - Note: CI installs gd-tools-cli from git+https (PyPI 0.7.0 lags the protocol-4 addons; local dev install is editable)
 - [x] Task: Phase Verification & Checkpoint (Refer to workflow.md) `[checkpoint: 85b786e]`
   - Verified 2026-10-08: lint/format/test (2/2)/headless import all green; git-notes report on 85b786e; CI run verification deferred with remote.
 
