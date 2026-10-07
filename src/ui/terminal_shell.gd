@@ -13,7 +13,7 @@ const Completer := preload("res://src/ui/completer.gd")
 
 const PHOSPHOR_GREEN := Vector3(0.30, 1.0, 0.45)
 const PHOSPHOR_AMBER := Vector3(1.0, 0.62, 0.18)
-const FLICKER_ON := 0.11
+const FLICKER_ON := 0.09
 const FLICKER_OFF := 0.0
 
 const GHOST_COLOR := "5a8f68"
