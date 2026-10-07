@@ -9,7 +9,7 @@ config_version=5
 config/name="The Terminal at Sub-Level 4"
 config/description="Retro-terminal horror: run the graveyard-shift console for Facility Boreas and decide who lives."
 config/version="0.1.0"
-run/main_scene=""
+run/main_scene="res://src/ui/terminal_shell.tscn"
 config/features=PackedStringArray("4.7")
 config/icon="res://icon.svg"
 

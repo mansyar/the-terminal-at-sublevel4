@@ -39,6 +39,7 @@ exclude = [
     ".godot",
     ".gd-tools",
     ".git",
+    "src/ui",
 ]
 test_dirs = [
     "test",

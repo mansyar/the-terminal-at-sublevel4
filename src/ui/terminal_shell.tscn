@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://src/ui/terminal_shell.gd" id="1_shell"]
+[ext_resource type="Shader" path="res://src/ui/crt_overlay.gdshader" id="2_crt"]
+[ext_resource type="FontFile" path="res://assets/fonts/VT323-Regular.ttf" id="3_font"]
+[ext_resource type="AudioStreamWAV" path="res://assets/sfx/key_click.wav" id="4_sfx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_crt"]
+shader = ExtResource("2_crt")
+shader_parameter/phosphor_tint = Vector3(0.3, 1, 0.45)
+shader_parameter/flicker_amplitude = 0.035
+shader_parameter/scanline_strength = 0.22
+shader_parameter/vignette_strength = 0.38
+
+[node name="TerminalShell" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_shell")
+
+[node name="Content" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Header" type="Label" parent="Content"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = -32.0
+offset_bottom = 80.0
+mouse_filter = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.42, 0.98, 0.56, 1)
+text = "SYSTEM STATUS: OFFLINE"
+
+[node name="Output" type="RichTextLabel" parent="Content"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 96.0
+offset_right = -32.0
+offset_bottom = -80.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_font")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_colors/default_color = Color(0.55, 1, 0.65, 1)
+bbcode_enabled = false
+scroll_active = false
+
+[node name="InputLine" type="RichTextLabel" parent="Content"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -64.0
+offset_right = -32.0
+offset_bottom = -24.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_font")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_colors/default_color = Color(0.55, 1, 0.65, 1)
+bbcode_enabled = true
+scroll_active = false
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+layout_mode = 1
+
+[node name="CRTOverlay" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+material = SubResource("ShaderMaterial_crt")
+
+[node name="KeyClick" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_sfx")
+volume_db = -8.0

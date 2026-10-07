@@ -10,35 +10,41 @@
 - [x] Task: Initialize gd-tools toolchain (SHA: 4037054)
   - Run `gd-tools init`; review generated `gd-tools.toml`, gdlintrc, gdformatrc
   - `gd-tools doctor` passes; `gd-tools install-hooks --hooks format,lint`
-- [~] Task: CI pipeline (GitHub Actions)
+- [ ] Task: CI pipeline (GitHub Actions)
   - Workflow running `gd-tools lint`, `format --check`, `test --coverage` on push; green on first run
     - Note: `--min 90` coverage gate is added in Phase B once `src/core/` exists (nothing to gate now)
-- [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md)
+    - Workflow file committed (SHA: 85b786e); **run verification deferred** until remote exists
+- [x] Task: Phase Verification & Checkpoint (Refer to workflow.md) `[checkpoint: 85b786e]`
+  - Verified 2026-10-08: lint/format/test (2/2)/headless import all green; git-notes report on 85b786e; CI run verification deferred with remote.
 
 ## Phase B: WorldState Core (TDD)
 
-- [ ] Task: Write failing tests for WorldState (red phase)
-  - Seed determinism (same seed+commands → identical state), clock advance-on-command from 01:50 AM, sector/door/sensor/personnel state reads, power allocation fields present, no unseeded randomness
-- [ ] Task: Implement WorldState + seed plumbing (green phase)
+- [x] Task: Write failing tests for WorldState (red phase) (SHA: 8c9fd59)
+- [x] Task: Implement WorldState + seed plumbing (green phase) (SHA: 8c9fd59)
   - `src/core/world_state.gd` — seeded construction from launch flag/env, clock advance API, query accessor API
   - Register as autoload; UI-only consumers
-- [ ] Task: Write failing tests for data loader, then implement (red→green)
+    - Note: autoload registration deferred to Phase D "Wire shell to core" (autoload requires Node wrapper; WorldState is pure RefCounted)
+- [x] Task: Write failing tests for data loader, then implement (red→green) (SHA: 9dd7b65)
   - JSON loading from `res://data/`, `schema_version` validation, structure validation errors
-- [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md)
+- [x] Task: Phase Verification & Checkpoint (Refer to workflow.md) `[checkpoint: 9dd7b65]`
+  - Verified 2026-10-08: 17/17 tests, 100% line+branch coverage on src/core, lint/format clean; git-notes report on 9dd7b65.
 
 ## Phase C: Command Parser (TDD)
 
-- [ ] Task: Write failing tests for parser (red phase)
+- [x] Task: Write failing tests for parser (red phase) (SHA: fe12b33)
   - Verb dispatch (`query`/`log`/`help`), argument parsing (sector/personnel/sensor/file_id), fuzzy suggest-the-closest (`quary` → suggests `query`), unknown-command rejection, extensibility for future verbs without restructuring
-- [ ] Task: Implement parser + read-command execution (green phase)
+- [x] Task: Implement parser + read-command execution (green phase) (SHA: beaac49)
   - `src/core/command_parser.gd` + query/log/help handlers against WorldState + data
   - Results as structured records the UI renders
-- [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md)
+    - Parser committed fe12b33; executor beaac49 (both under this task)
+- [x] Task: Phase Verification & Checkpoint (Refer to workflow.md) `[checkpoint: beaac49]`
+  - Verified 2026-10-08: 38/38 tests, --min 90 gate passing (94.7% lines / 93.9% branches), lint/format clean; git-notes report on beaac49.
 
 ## Phase D: Terminal Shell (presentation — smoke tests, no red phase)
 
-- [ ] Task: 80×24 grid terminal surface
+- [~] Task: 80×24 grid terminal surface
   - RichTextLabel-based shell honoring the grid contract, deterministic wrapping, bounded scrollback (~200 lines) + per-run file mirror
+    - TerminalBuffer (wrap/scrollback/mirror) committed and tested (SHA: 2f4626f); scene surface rendering lands with the wire-up task
 - [ ] Task: CRT shader & display toggles
   - Scanlines, vignette, subtle flicker, phosphor persistence; green default + amber toggle + reduced-flicker accessibility toggle
 - [ ] Task: Custom input capture
