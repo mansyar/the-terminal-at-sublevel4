@@ -2,7 +2,7 @@
   "track_id": "phase0_foundations_20261008",
   "description": "Phase 0 — Foundations: Godot project skeleton, seeded WorldState core, read-only command parser, full CRT terminal shell, gd-tools toolchain + CI, content slice, export verification",
   "type": "MVP",
-  "status": "new",
+  "status": "complete",
   "created": "2026-10-08",
   "updated": "2026-10-08",
   "phase": "0 of 5"

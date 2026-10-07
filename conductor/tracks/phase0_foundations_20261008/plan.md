@@ -69,7 +69,8 @@
   - Windows + Web export presets; web export builds and runs in browser
   - Presets committed (74179ff). Windows export: SubLevel4.exe + .pck built. Web export: full WASM bundle built and boot-verified in browser (Godot v4.7.2 console clean, WebGL 2.0 context, live canvas, all assets served 200).
   - DEVIATION: user's Godot is the .NET (mono) build, which refuses Web export; standard (non-.NET) 4.7.2 editor downloaded to tools/godot-standard/ (gitignored) to drive Web exports. Export templates 4.7.2.stable installed + junctioned as 4.7.2.stable.mono.
-- [~] Task: Phase Verification & Checkpoint (Refer to workflow.md)
+- [x] Task: Phase Verification & Checkpoint (Refer to workflow.md) `[checkpoint: 55f30c5]`
+  - Verified 2026-10-08: user confirmed content slice + both exports; 68/68 tests, core 95.5%/95.1% (gate 90), lint/format clean; git-notes report on 55f30c5.
 
 ---
 
