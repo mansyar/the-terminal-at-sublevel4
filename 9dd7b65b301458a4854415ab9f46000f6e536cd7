@@ -1,0 +1,1 @@
+Phase B checkpoint verification (2026-10-08): gd-tools test --coverage = 17/17 passed, 100% line+branch coverage on src/core (gate 90%); lint clean; format --check clean. Modules: WorldState (seeded, clocked) + DataLoader (schema_version validation). Autoload registration deferred to Phase D by design.
