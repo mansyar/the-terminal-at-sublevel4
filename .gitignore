@@ -1,0 +1,17 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# gd-tools caches and artifacts
+.gd-tools/
+
+# Exports
+exports/
+*.tmp
+
+# Run session logs (per-run terminal mirrors)
+*.session.log
+
+# OS junk
+Thumbs.db
+.DS_Store
