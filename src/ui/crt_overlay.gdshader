@@ -31,8 +31,11 @@ void fragment() {
 	float dist = distance(SCREEN_UV, vec2(0.5, 0.5));
 	tinted *= 1.0 - vignette_strength * smoothstep(0.35, 0.85, dist);
 
-	// Flicker: fast subtle brightness oscillation.
-	float flicker = flicker_amplitude * (0.5 + 0.5 * sin(TIME * 73.0));
+	// Flicker: fast ripple plus a slow drift, so it reads as analog
+	// instability instead of a mechanical pulse.
+	float fast = 0.5 + 0.5 * sin(TIME * 73.0);
+	float slow = 0.5 + 0.5 * sin(TIME * 9.3);
+	float flicker = flicker_amplitude * (fast * 0.7 + slow * 0.3);
 	tinted *= 1.0 - flicker;
 
 	COLOR = vec4(tinted, 1.0);
