@@ -170,7 +170,7 @@ func _render_unit(record: Dictionary) -> void:
 		)
 	)
 	if record.has("sensors") and not (record["sensors"] as Dictionary).is_empty():
-		_render_sensor_line("L4-02", record["sensors"])
+		_render_sensor_line(String(record["unit_id"]), record["sensors"])
 
 
 func _render_sensor_line(sensor_id: String, sensors: Dictionary) -> void:

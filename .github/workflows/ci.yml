@@ -17,7 +17,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install gd-tools
-        run: pip install "gd-tools-cli @ git+https://github.com/mansyar/gd-tools"
+        run: pip install "gd-tools-cli @ git+https://github.com/mansyar/gd-tools@2a950e492ffb77d35b8bcf47f12d60a6f4f7ba84"
 
       - name: Setup Godot
         uses: chickensoft-games/setup-godot@v1

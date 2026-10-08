@@ -75,6 +75,7 @@ func _query(args: Array) -> Dictionary:
 					"kind": "unit",
 					"record":
 					{
+						"unit_id": unit_id,
 						"door": sector["doors"][unit_id],
 						"sensors": sector["sensors"].get(unit_id, {}),
 					},
@@ -92,6 +93,8 @@ func _log(args: Array) -> Dictionary:
 		return {"kind": "error", "message": "usage: log <file_id>"}
 
 	var file_id := String(args[0])
+	if not file_id.is_valid_filename() or file_id.contains(".."):
+		return {"kind": "error", "message": "unknown record: %s" % file_id}
 	var result := DataLoader.load_json("%s/%s.json" % [_logs_dir, file_id])
 	if not result["ok"]:
 		return {"kind": "error", "message": result["error"]}

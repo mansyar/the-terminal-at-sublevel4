@@ -40,8 +40,16 @@ func test_query_unit_returns_door_and_sensors() -> void:
 	var result := _run("query L4-02")
 	assert_eq(result["kind"], "unit", "unit record kind")
 	var record: Dictionary = result["record"]
+	assert_eq(record["unit_id"], "L4-02", "unit record carries its id")
 	assert_eq(record["door"]["state"], "sealed", "door state included")
 	assert_true(record.has("sensors"), "sensor readings included")
+
+
+func test_log_rejects_path_escape() -> void:
+	var up := _run("log ../sectors")
+	assert_eq(up["kind"], "error", "traversal id rejected")
+	var slash := _run("log sub/file")
+	assert_eq(slash["kind"], "error", "nested path id rejected")
 
 
 func test_query_personnel_returns_personnel_record() -> void:
