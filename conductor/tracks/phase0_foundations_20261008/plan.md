@@ -75,3 +75,10 @@
 ---
 
 Commit discipline per `workflow.md`: one conventional commit per task (`feat(core): ...`, `chore(tooling): ...`), task summary via git notes, status markers and SHAs updated in this plan as work proceeds.
+
+## Phase: Review Fixes
+
+- [x] Task: Apply review suggestions [b17e98f]
+  - log file-id sanitization (path traversal rejected)
+  - unit records carry unit_id; shell renders record id
+  - CI pins gd-tools install to upstream commit 2a950e4
